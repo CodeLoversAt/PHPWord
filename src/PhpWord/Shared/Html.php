@@ -44,7 +44,7 @@ class Html
 
         // Preprocess: remove all line ends, decode HTML entity, and add body tag for HTML fragments
         $html = str_replace(array("\n", "\r"), '', $html);
-        $html = html_entity_decode($html);
+        $html = html_entity_decode($html, null, 'UTF-8');
         if ($fullHTML === false) {
             $html = '<body>' . $html . '</body>';
         }
